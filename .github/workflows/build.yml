@@ -9,18 +9,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
       - name: Install EAS CLI
         run: npm install -g eas-cli
-
       - name: Install dependencies
         run: npm install --no-audit
-
       - name: Build Android APK
         run: npx eas-build --platform android --profile preview --non-interactive
         env:
