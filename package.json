@@ -1,1 +1,29 @@
-{\n  "name": "ATLs36s-Fish-Mobile",\n  "version": "1.0.0",\n  "private": true,\n  "scripts": {\n    "start": "expo start",\n    "android": "expo run:android",\n    "ios": "expo run:ios",\n    "web": "expo start --web"\n  },\n  "dependencies": {\n    "expo": "~44.0.0",\n    "react": "17.0.1",\n    "react-dom": "17.0.1",\n    "react-native": "~0.64.0",\n    "react-native-gesture-handler": "~2.1.0",\n    "react-native-reanimated": "~2.2.0",\n    "react-native-safe-area-context": "~3.2.0",\n    "react-native-screens": "~3.10.0",\n    "react-navigation/native": "^6.0.0",\n    "react-navigation/stack": "^6.0.0"\n  },\n  "devDependencies": {\n    "babel-preset-expo": "~8.4.0"\n  },\n  "keywords": [],\n  "author": "Nam-6767",\n  "license": "MIT"\n}
+{
+  "name": "ATLs36s-Fish-Mobile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "expo": "~44.0.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-native": "~0.64.0",
+    "react-native-gesture-handler": "~2.1.0",
+    "react-native-reanimated": "~2.2.0",
+    "react-native-safe-area-context": "~3.2.0",
+    "react-native-screens": "~3.10.0",
+    "@react-navigation/native": "^6.0.0",
+    "@react-navigation/stack": "^6.0.0"
+  },
+  "devDependencies": {
+    "babel-preset-expo": "~8.4.0"
+  },
+  "keywords": [],
+  "author": "Nam-6767",
+  "license": "MIT"
+}
