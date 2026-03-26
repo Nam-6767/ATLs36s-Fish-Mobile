@@ -1,11 +1,14 @@
 name: Build APK ATLs36s-Fish
+
 on:
   push:
     branches:
       - main
+
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -15,13 +18,13 @@ jobs:
         with:
           node-version: 18
 
+      - name: Install dependencies
+        run: npm install
+
       - name: Install EAS CLI
         run: npm install -g eas-cli
 
-      - name: Install dependencies
-        run: npm install --no-audit
-
       - name: Build Android APK
-        run: npx eas-build --platform android --profile preview --non-interactive
+        run: eas build -p android --profile preview --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
