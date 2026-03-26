@@ -1,0 +1,27 @@
+name: Build APK ATLs36s-Fish
+on:
+  push:
+    branches: [ main ] # Chạy khi Nam nhấn Commit vào nhánh chính
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Lấy code từ Github
+        uses: actions/checkout@v4
+
+      - name: 🏗️ Cài đặt môi trường Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: 📦 Cài đặt EAS CLI và Thư viện
+        run: |
+          npm install -g eas-cli
+          npm install
+
+      - name: 🚀 Robot bắt đầu nấu APK
+        run: eas build --platform android --profile preview --non-interactive
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }} # Chìa khóa bảo mật của Nam
+          
