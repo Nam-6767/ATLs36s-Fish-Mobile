@@ -9,15 +9,21 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm' # Thêm cái này để build lần sau nhanh hơn
+
       - name: Install EAS CLI
         run: npm install -g eas-cli
+
       - name: Install dependencies
         run: npm install --no-audit
+
       - name: Build Android APK
-        run: npx eas-build --platform android --profile preview --non-interactive
+        # Sửa npx eas-build thành eas build
+        run: eas build --platform android --profile preview --non-interactive
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
